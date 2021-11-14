@@ -292,7 +292,10 @@
                         <a class="dropdown-item" href="{{ ('user/profile') }}"><i class="mdi mdi-face-profile font-size-16 align-middle me-1"></i> Profile</a>
                         <a class="dropdown-item" href="auth-lock-screen.html"><i class="mdi mdi-lock font-size-16 align-middle me-1"></i> Lock screen</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href=""><i class="mdi mdi-logout font-size-16 align-middle me-1"></i> Logout</a>
+                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="mdi mdi-logout font-size-16 align-middle me-1"></i> Logout</a>
+                        <form method="POST" id="logout-form" action="{{ route('logout') }}">
+                            @csrf
+                        </form>
                     </div>
                 </div>
 

@@ -1,24 +1,44 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<!doctype html>
+<html lang="en">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+<head>
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+    <meta charset="utf-8" />
+    <title>Login | Minia - Minimal Admin & Dashboard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="{{ asset('assets/dashboard/assets/images/favicon.ico') }}">
 
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <!-- preloader css -->
+    <link rel="stylesheet" href="{{ asset('assets/dashboard/assets/css/preloader.min.css') }}" type="text/css" />
 
-        <!-- Scripts -->
-        <script src="{{ mix('js/app.js') }}" defer></script>
-    </head>
-    <body>
-        <div class="font-sans text-gray-900 antialiased">
-            {{ $slot }}
-        </div>
-    </body>
+    <!-- Bootstrap Css -->
+    <link href="{{ asset('assets/dashboard/assets/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="{{ asset('assets/dashboard/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="{{ asset('assets/dashboard/assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+{{$slot}}
+
+<!-- JAVASCRIPT -->
+<script src="{{ asset('assets/dashboard/assets/libs/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/dashboard/assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('assets/dashboard/assets/libs/metismenu/metisMenu.min.js') }}"></script>
+<script src="{{ asset('assets/dashboard/assets/libs/simplebar/simplebar.min.js') }}"></script>
+<script src="{{ asset('assets/dashboard/assets/libs/node-waves/waves.min.js') }}"></script>
+<script src="{{ asset('assets/dashboard/assets/libs/feather-icons/feather.min.js') }}"></script>
+<!-- pace js -->
+<script src="{{ asset('assets/dashboard/assets/libs/pace-js/pace.min.js') }}"></script>
+<!-- password addon init -->
+<script src="{{ asset('assets/dashboard/assets/js/pages/pass-addon.init.js') }}"></script>
+
+</body>
+
 </html>
