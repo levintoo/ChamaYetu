@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
-            $table->string('utype')->default('USR')->comment('USR for user ADM for admin and SEC for secretary');
+            $table->string('utype')->default('USR')->comment('USR for user and ADM for admin and Sec for secretary');
             $table->timestamps();
         });
     }

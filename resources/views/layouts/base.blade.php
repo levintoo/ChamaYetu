@@ -91,7 +91,7 @@
                         <li class="nav-item"><a href="" class="nav-link"></a>
                         </li>
                         <span class="d-flex align-items-center">
-                    <a href="{{ route('contact') }}" class="btn theme-btn-1 rel-btn">
+                    <a href="{{ route('dashboard') }}" class="btn theme-btn-1 rel-btn">
                         @if(Route::has('login'))
                             @auth
                                 @if(Auth::user()->utype === 'ADM')
