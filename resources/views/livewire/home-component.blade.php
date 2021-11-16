@@ -1,4 +1,13 @@
-<div class="hero-1 oh pos-rel" style="background: url('images/hero/banner-bg.png')">
+{{--<!-- PreLoader -->--}}
+{{--<div id="preloader">--}}
+{{--    <div id="status">--}}
+{{--        <div class="spinner"></div>--}}
+{{--    </div>--}}
+{{--</div>--}}
+{{--<!--Preloader-->--}}
+
+
+<div class="hero-1 oh pos-rel" style="background: url('assets/images/hero/banner-bg.png')">
     <!-- container -->
     <div class="container">
         <!-- row -->

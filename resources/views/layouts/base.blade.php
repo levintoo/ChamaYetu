@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title> Bnker. - Banking and Loan </title>
 
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" type="image/x-icon">
@@ -14,11 +15,11 @@
     @livewireStyles
 <body>
 <!-- PreLoader -->
-<div id="preloader">
-    <div id="status">
-        <div class="spinner"></div>
-    </div>
-</div>
+{{--<div id="preloader">--}}
+{{--    <div id="status">--}}
+{{--        <div class="spinner"></div>--}}
+{{--    </div>--}}
+{{--</div>--}}
 <!--Preloader-->
 
 <!-- Header -->
@@ -183,7 +184,7 @@
                     <!-- col -->
                     <div class="col-lg-4">
                         <div class="button-shared text-end">
-                            <a href="contact.html" class="btn cta-btn">
+                            <a href="{{ route('contact') }}" class="btn cta-btn">
                                 Request Call Back <span class="la la-caret-right"></span>
                             </a>
                         </div>
@@ -208,7 +209,7 @@
             <!-- col -->
             <div class="col-xl-3 col-lg-3 col-md-4">
                 <div class="footer-logo">
-                    <a href="index-2.html"><img src="{{ asset('assets/images/logo.png') }}" alt=""></a>
+                    <a href="/"><img src="{{ asset('assets/images/logo.png') }}" alt=""></a>
                 </div>
             </div>
             <!-- /col -->
@@ -219,9 +220,9 @@
                         <li><a href="#">Layouts </a></li>
                         <li><a href="#"> Pages</a></li>
                         <li><a href="#">Work</a></li>
-                        <li><a href="#">Blog </a></li>
+                        <li><a href="{{route('blog')}}">Blog </a></li>
                         <li><a href="#">Shop</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="{{route('contact')}}">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -288,9 +289,9 @@
                         <h3 class="footer-title">Subscribe</h3>
                         <div class="subscribes-form">
                             <form action="">
-                                <input placeholder="Enter email " type="email">
-                                <button class="btn theme-btn-1 width-100 mt-10"><i
-                                        class="lab la-telegram-plane me-2"></i>subscribe</button>
+                                <input placeholder="Enter email " type="email" >
+                                <button class="btn theme-btn-1 width-100 mt-10" ><i
+                                        class="lab la-telegram-plane me-2" ></i>subscribe</button>
                             </form>
                         </div>
                         <div class="footer-info">
@@ -347,6 +348,7 @@
 <script src="{{ asset('assets/js/vendors.js') }}"></script>
 <script src="{{ asset('assets/js/plugins.js') }}"></script>
 <script src="{{ asset('assets/js/main.js') }}"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 @livewireScripts
 @stack('scripts')
 </body>
