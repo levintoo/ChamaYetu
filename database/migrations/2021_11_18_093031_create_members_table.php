@@ -19,6 +19,7 @@ class CreateMembersTable extends Migration
             $table->string('national_id',100)->unique()->nullable();
             $table->date('dob')->format('Y/m/d')->nullable();
             $table->string('residence',255)->nullable();
+            $table->bigInteger('balance')->default(0);
             $table->string('status',1)->default('0')->nullable()->comment('0 for created 1 for copleted 2 for deleted 3 for banned');
         });
     }
