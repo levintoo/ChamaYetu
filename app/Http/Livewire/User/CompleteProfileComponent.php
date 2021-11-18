@@ -5,6 +5,7 @@ namespace App\Http\Livewire\User;
 use App\Models\Members;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use Haruncpi\LaravelIdGenerator\IdGenerator;
 
 class CompleteProfileComponent extends Component
 {
@@ -47,6 +48,8 @@ class CompleteProfileComponent extends Component
 
         if ($user->status < 1)
         {
+            $id = IdGenerator::generate(['table' => 'users','field'=>'name', 'length' => 9, 'prefix' =>'CH-']);
+            $user->userid =$id;
             $user->oficial_name = $this->oficial_name;
             $user->national_id = $this->national_id;
             $user->phone_number = $this->phone_number;
@@ -66,3 +69,4 @@ class CompleteProfileComponent extends Component
         return view('livewire.user.complete-profile-component')->layout('layouts.dashboard');
     }
 }
+

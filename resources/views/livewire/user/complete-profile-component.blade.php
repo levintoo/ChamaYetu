@@ -80,8 +80,35 @@
                                             @error('residence') <p class="text-danger">{{$message}}</p>@enderror
                                         </div>
                                         <div class="mb-3">
-                                            <button type="button" class="btn btn-primary" wire:click="storeinfo()">Update me</button>
-                                            <button class="btn theme-btn-1 add_message" type="button" name="submit-form" wire:click="storeinfo()">Save</button>
+
+
+                                        @php
+                                        if(!Auth::user()->userid = 'true'){
+                                                echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                                                Save
+                                            </button>';
+                                            }
+                                        @endphp
+
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLongTitle">Careful,</h5>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                             you can't edit this section again
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-primary" wire:click="storeinfo()" data-dismiss="modal">Save changes</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
                                         </div>
                                     </div>
                                 </div>
