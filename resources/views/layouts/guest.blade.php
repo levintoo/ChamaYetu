@@ -13,6 +13,8 @@
 
     <!-- preloader css -->
     <link rel="stylesheet" href="{{ asset('assets/dashboard/assets/css/preloader.min.css') }}" type="text/css" />
+    <!-- datepicker css -->
+    <link rel="stylesheet" href="{{ asset('assets/dashboard/assets/libs/flatpickr/flatpickr.min.css') }}">
 
     <!-- Bootstrap Css -->
     <link href="{{ asset('assets/dashboard/assets/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -28,6 +30,7 @@
 {{$slot}}
 
 <!-- JAVASCRIPT -->
+
 <script src="{{ asset('assets/dashboard/assets/libs/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('assets/dashboard/assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('assets/dashboard/assets/libs/metismenu/metisMenu.min.js') }}"></script>
@@ -39,6 +42,9 @@
 <!-- password addon init -->
 <script src="{{ asset('assets/dashboard/assets/js/pages/pass-addon.init.js') }}"></script>
 
+<script src="{{ asset('assets/dashboard/assets/libs/flatpickr/flatpickr.min.js') }}"></script>
+@livewireScripts
+@stack('guest-scripts')
 </body>
 
 </html>
