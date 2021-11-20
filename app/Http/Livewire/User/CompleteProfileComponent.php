@@ -59,9 +59,7 @@ class CompleteProfileComponent extends Component
             $user->save();
             session()->flash('message',"Saved successfully" );
         }else{
-            $user->residence = $this->residence;
-            $user->save();
-            session()->flash('message',"Only Residential Change was accepted" );
+            session()->flash('message',"You cannot change this details!" );
         }
     }
     public function render()

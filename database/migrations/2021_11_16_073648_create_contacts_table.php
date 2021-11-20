@@ -20,6 +20,7 @@ class CreateContactsTable extends Migration
             $table->string('phone',50);
             $table->string('subject',50);
             $table->string('message');
+            $table->string('status',2)->default(1)->comment('1 for received 2 for read 3 for replied');
             $table->timestamps();
         });
     }

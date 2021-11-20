@@ -48,6 +48,9 @@
 
                             <form >
                                 @csrf
+                                @php
+                                    if(Auth::user()->status < 1){
+                                          @endphp
                                 <div class="row justify-content-center">
                                     <div class="col-lg-6">
                                         @if(Session::has('message'))
@@ -83,14 +86,14 @@
 
 
                                         @php
-                                        if(Auth::user()->status < 1){
-                                                echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                                                Save
-                                            </button>';
-                                            }
+                                            if(Auth::user()->status < 1){
+                                                    echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                                                    Save
+                                                </button>';
+                                                }
                                         @endphp
 
-                                            <!-- Modal -->
+                                        <!-- Modal -->
                                             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                                     <div class="modal-content">
@@ -98,7 +101,7 @@
                                                             <h5 class="modal-title" id="exampleModalLongTitle">Careful,</h5>
                                                         </div>
                                                         <div class="modal-body">
-                                                             you can't edit this section again
+                                                            you can't edit this section again
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -112,6 +115,43 @@
                                         </div>
                                     </div>
                                 </div>
+                                @php
+                                        }else{
+                                @endphp
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-6">
+                                        @if(Session::has('message'))
+                                            <div class="alert alert-success" role="alert">{{Session::get('message')}}</div>
+                                        @endif
+                                        <div class="mb-3">
+                                            <label class="form-label">Oficial name</label>
+                                            <p class="text-success">{{Auth::user()->oficial_name}}</p>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Phone</label>
+                                            <p class="text-success">{{Auth::user()->phone_number}}</p>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">DOB</label>
+                                            <p class="text-success">{{Auth::user()->dob}}</p>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">National ID</label>
+                                            <p class="text-success">{{Auth::user()->national_id}}</p>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Residence</label>
+                                            <p class="text-success">{{Auth::user()->residence}}</p>
+                                        </div>
+                                        <div class="mb-3">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                @php
+}
+                                @endphp
                             </form>
                         </div>
                         <!-- end card body -->
