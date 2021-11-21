@@ -16,9 +16,9 @@ class CreateSavingsTable extends Migration
         Schema::create('savings', function (Blueprint $table) {
             $table->id();
             $table->string('userid',100);
-            $table->string('source');
-            $table->string('transactionid');
-            $table->bigInteger('amount');
+            $table->string('source',100);
+            $table->string('transactionid',100);
+            $table->bigInteger('amount')->unsigned();
             $table->timestamps();
         });
     }
