@@ -15,7 +15,7 @@
                             @endif
                             <div class="mb-3">
                                 <label class="form-label">Current Password</label>
-                                <input type="password" class="form-control" placeholder="********" wire:model="current_password">
+                                <input type="password" class="form-control" placeholder="********" wire:model="new_password">
                                 @error('current_password') <p class="text-danger">{{$message}}</p>@enderror
                             </div>
                             <div class="mb-3">

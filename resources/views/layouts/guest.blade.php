@@ -22,8 +22,18 @@
     <link href="{{ asset('assets/dashboard/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- App Css-->
     <link href="{{ asset('assets/dashboard/assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
+    <!-- choices js -->
+    <script src="{{ asset('assets/dashboard/assets/libs/choices.js/public/assets/scripts/choices.min.js') }}"></script>
 
-</head>
+
+    <!-- color picker css -->
+    <link rel="stylesheet" href="{{ asset('assets/dashboard/assets/libs/%40simonwep/pickr/themes/classic.min.css') }}"/> <!-- 'classic' theme -->
+    <link rel="stylesheet" href="{{ asset('assets/dashboard/assets/libs/%40simonwep/pickr/themes/monolith.min.css') }}"/> <!-- 'monolith' theme -->
+    <link rel="stylesheet" href="{{ asset('assets/dashboard/assets/libs/%40simonwep/pickr/themes/nano.min.css') }}"/> <!-- 'nano' theme -->
+
+    <!-- datepicker css -->
+    <link rel="stylesheet" href="{{ asset('assets/dashboard/assets/libs/flatpickr/flatpickr.min.css') }}">
+    </head>
 
 <body>
 
@@ -42,7 +52,24 @@
 <!-- password addon init -->
 <script src="{{ asset('assets/dashboard/assets/js/pages/pass-addon.init.js') }}"></script>
 
+<!-- choices js -->
+<script src="{{ asset('assets/dashboard/assets/libs/choices.js/public/assets/scripts/choices.min.js') }}"></script>
+
+
+
+<!-- color picker js -->
+<script src="{{ asset('assets/dashboard/assets/libs/%40simonwep/pickr/pickr.min.js') }}"></script>
+<script src="{{ asset('assets/dashboard/assets/libs/%40simonwep/pickr/pickr.es5.min.js') }}"></script>
+<!-- color picker js -->
+
+<!-- datepicker js -->
 <script src="{{ asset('assets/dashboard/assets/libs/flatpickr/flatpickr.min.js') }}"></script>
+
+<!-- init js -->
+<script src="{{ asset('assets/dashboard/assets/js/pages/form-advanced.init.js') }}"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
 @livewireScripts
 @stack('guest-scripts')
 </body>

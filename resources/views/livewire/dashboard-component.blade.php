@@ -119,7 +119,7 @@
                     <h5 class="card-title me-2">Wallet Balance</h5>
                     <div class="ms-auto">
                         <div>
-                            <button type="button" class="btn btn-soft-secondary btn-sm">
+                            <button type="button" href="{{route('register-step-two')}}" class="btn btn-soft-secondary btn-sm">
                                 ALL
                             </button>
                             <button type="button" class="btn btn-soft-primary btn-sm">
