@@ -22,6 +22,7 @@ class AuthAdmin
         }
         else
         {
+//            dd(session('utype'));
             session()->flush();
             return redirect()->route('login');
         }

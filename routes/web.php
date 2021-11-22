@@ -2,6 +2,7 @@
 
 use App\Http\Livewire\AboutUsComponent;
 use App\Http\Livewire\Admin\MailboxComponent;
+use App\Http\Livewire\Admin\UsersComponent;
 use App\Http\Livewire\BlogComponent;
 use App\Http\Livewire\ContactComponent;
 use App\Http\Livewire\DashboardComponent;
@@ -19,6 +20,7 @@ Route::get('/portfolio',PortfolioComponent::class)->name('portfolio');
 
 Route::middleware(['auth:sanctum', 'verified','authadmin'])->group(function () {
     Route::get('/admin/mailbox', MailboxComponent::class)->name('admin.malbox');
+    Route::get('/admin/users',UsersComponent::class)->name('admin.users');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
