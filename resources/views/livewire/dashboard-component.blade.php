@@ -37,7 +37,7 @@
                     <div class="col-6">
                         <span class="text-muted mb-3 lh-1 d-block text-truncate">My Wallet</span>
                         <h4 class="mb-3">
-                            Ksh <span class="counter-value" data-target="{{$user->walletbalance}}.">0</span>
+                            Ksh <span class="counter-value" data-target="1236.">0</span>
                         </h4>
                     </div>
 

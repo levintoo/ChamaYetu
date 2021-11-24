@@ -96,11 +96,11 @@
                         @if(Route::has('login'))
                             @auth
                                 @if(Auth::user()->utype === 'ADM')
-                                    Dashboard(adm)
+                                    Admin
                                 @elseif(Auth::user()->utype === 'SEC')
-                                    Dashboard(sec)
+                                    Secretary
                                 @else
-                                    Dashboard(usr)
+                                    Dashboard
                                 @endif
                             @else
                                 Get started

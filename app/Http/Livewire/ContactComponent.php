@@ -26,7 +26,7 @@ class ContactComponent extends Component
     {
         $this->validateOnly($fields,[
             'name' => 'required',
-            'email' => 'required|email|unique:contacts',
+            'email' => 'required|email',
             'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
             'subject' => 'required',
             'message' => 'required'

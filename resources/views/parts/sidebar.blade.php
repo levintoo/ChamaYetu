@@ -9,7 +9,7 @@
                 <li class="menu-title" data-key="t-menu">Menu</li>
 
                 <li>
-                    <a href="/">
+                    <a href="{{route('dashboard')}}">
                         <i data-feather="home"></i>
                         <span data-key="t-dashboard">Dashboard</span>
                     </a>
@@ -65,7 +65,7 @@
                 </li>
 
                 <li>
-                    <a href="{{route('dashboard.profile',['userid'=>Auth::user()->id])}}" >
+                    <a href="{{route('dashboard.profile')}}" >
                         <i data-feather="users"></i>
                         <span data-key="t-authentication">Profile</span>
                     </a>
@@ -87,13 +87,18 @@
                         <li><a href="pages-500.html" data-key="t-error-500">Error 500</a></li>
                     </ul>
                 </li>
-
-                <li>
-                    <a href="layouts-horizontal.html">
-                        <i data-feather="layout"></i>
-                        <span data-key="t-horizontal">Horizontal</span>
-                    </a>
-                </li>
+                @if(Route::has('login'))
+                    @auth
+                        @if(Auth::user()->utype === 'ADM'or Auth::user()->utype === 'SEC')
+                            <li>
+                                <a href="{{route('admin.users')}}">
+                                    <i data-feather="layout"></i>
+                                    <span data-key="t-horizontal">Users Details</span>
+                                </a>
+                            </li>
+                        @endif
+                    @endif
+                @endif
 
                 <li class="menu-title mt-2" data-key="t-components">Elements</li>
 
