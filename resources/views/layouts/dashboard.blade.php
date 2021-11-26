@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-
     <meta charset="utf-8" />
     <title>Dashboard | Minia - Minimal Admin & Dashboard </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,6 +32,9 @@
 
     <!-- datepicker css -->
     <link rel="stylesheet" href="{{ asset('assets/dashboard/assets/libs/flatpickr/flatpickr.min.css') }}">
+    <script
+        src="https://www.paypal.com/sdk/js?client-id=AY9Yzxqy9fUL9Tq0WiDR5iQlLzW-EqNRoKTYvxHX18RuboMi_81kMm7hGSRJqQj3qyaHpdv8KvQX0gyA"> // Required. Replace YOUR_CLIENT_ID with your sandbox client ID.
+    </script>
 </head>
 
 <body>
