@@ -37,7 +37,7 @@
                                 <h5 class="font-size-14"><i class="bx bx-wallet text-primary font-size-16 align-middle me-1"></i> <a href="#!" class="text-reset text-decoration-underline">$4335.23</a></h5>
                             </div>
                             <h5 class="font-size-14 mb-4">Buy Coins</h5>
-                            <div>
+                            <form>
                                 <div class="form-group mb-3">
                                     <label>Payment method :</label>
                                     <select class="form-select">
@@ -53,7 +53,7 @@
                                     <label>Add Amount :</label>
                                     <div class="input-group mb-3">
                                         <label class="input-group-text">Amount </label>
-                                        <input type="number" class="form-control" id="desposit-amount" placeholder="$58,245">
+                                        <input value="1" type="number" class="form-control" id="desposit-amount" placeholder="$58,245">
                                         <label class="input-group-text">Ksh</label>
                                     </div>
                                 </div>
@@ -66,7 +66,7 @@
                                 <div class="text-center">
                                     <a href="{{route('dashboard')}}" class="btn btn-success w-md">Cancel</a>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                         <!-- end tab pane -->
                         <div class="tab-pane" id="sell-tab" role="tabpanel">
@@ -128,18 +128,22 @@
 
     </div>
     <!-- end row-->
+
     <script>
 
-        var amount =12
-        console.log(amount)
-
         paypal.Buttons({
-            createOrder: function(data, actions) {
+            function (){
+                $('#desposit-amount').on('change', function() {
+                    var amount=  this.value;
+                    console.log(amount)
+                });
+            },
+            createOrder: function(data, actions ,amount) {
                 // This function sets up the details of the transaction, including the amount and line item details.
                 return actions.order.create({
                     purchase_units: [{
                         amount: {
-                            value: amount
+                            value: $('#desposit-amount').val()
                         }
                     }]
                 });
@@ -151,10 +155,10 @@
                     alert('Transaction completed by ' + details.payer.name.given_name);
                 });
             }
-        }).render('#paypal-button-container');
+        })      .render('#paypal-button-container');
+
         //This function displays Smart Payment Buttons on your web page.
     </script>
-
 </div>
 
 
