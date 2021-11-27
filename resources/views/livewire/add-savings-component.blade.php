@@ -151,8 +151,17 @@
             onApprove: function(data, actions) {
                 // This function captures the funds from the transaction.
                 return actions.order.capture().then(function(details) {
+                    $.ajax({
+                        type: "POST",
+                        url: "/dashboard/addsavings/saveinfo",
+                        data: details,
+                        dataType: "json",
+                        encode: true,
+                    }).done(function (data) {
+                        console.log("response sent for saving sucessfully");
+                    });
                     // This function shows a transaction success message to your buyer.
-                    alert('Transaction completed by ' + details.payer.name.given_name);
+                    console.log('Transaction completed by ' + details.payer.name.given_name);
                 });
             }
         })      .render('#paypal-button-container');

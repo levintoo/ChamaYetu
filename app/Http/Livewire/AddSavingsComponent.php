@@ -8,6 +8,10 @@ use Livewire\Component;
 
 class AddSavingsComponent extends Component
 {
+    public function store(Request $request)
+    {
+        return response()->json(['success'=>'Successfully']);
+    }
     public function render()
     {
         $user = Members::where('userid',Auth::user()->userid)->first();

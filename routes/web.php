@@ -12,6 +12,7 @@ use App\Http\Livewire\PortfolioComponent;
 use App\Http\Livewire\RegisterSteptwoComponent;
 use App\Http\Livewire\SavingsComponent;
 use App\Http\Livewire\User\CompleteProfileComponent;
+use App\Http\Livewire\User\LoanAplicationComponent;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeComponent::class)->name('index-page');
@@ -32,6 +33,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::get('/dashboard/profile',CompleteProfileComponent::class)->name('dashboard.profile');
         Route::get('/dashboard/savings',SavingsComponent::class)->name('dashboard.savings');
         Route::get('/dashboard/addsavings',AddSavingsComponent::class)->name('dashboard.addsavings');
+        Route::post('/dashboard/addsavings/saveinfo',[AddSavingsComponent::class,'store']);
+        Route::get('/loan/application',LoanAplicationComponent::class)->name('loan.application');
     });
 
      Route::get('/register-step-two',RegisterSteptwoComponent::class)->name('register-step-two');
