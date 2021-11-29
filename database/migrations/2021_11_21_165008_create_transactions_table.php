@@ -16,7 +16,7 @@ class CreateTransactionsTable extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
             $table->string('userid',100);
-            $table->string('type',100)->comment('1 for debit 2 for credit');
+            $table->string('source',100)->comment('wallet  mpesa paypal');
             $table->decimal('amount',9,3);
             $table->string('purpose',256)->comment('saving,loan payment,shares,loan repayment,utility');
             $table->string('source',100)->comment('1 for wallet 2 mpesa 3 paypal');

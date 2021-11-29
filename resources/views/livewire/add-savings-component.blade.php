@@ -130,15 +130,14 @@
     <!-- end row-->
 
     <script>
-
         paypal.Buttons({
-            function (){
+            function() {
                 $('#desposit-amount').on('change', function() {
-                    var amount=  this.value;
+                    var amount = this.value;
                     console.log(amount)
                 });
             },
-            createOrder: function(data, actions ,amount) {
+            createOrder: function(data, actions, amount) {
                 // This function sets up the details of the transaction, including the amount and line item details.
                 return actions.order.create({
                     purchase_units: [{
@@ -151,23 +150,39 @@
             onApprove: function(data, actions) {
                 // This function captures the funds from the transaction.
                 return actions.order.capture().then(function(details) {
-                    $.ajax({
-                        type: "POST",
-                        url: "/dashboard/addsavings/saveinfo",
-                        data: details,
-                        dataType: "json",
-                        encode: true,
-                    }).done(function (data) {
-                        console.log("response sent for saving sucessfully");
-                    });
-                    // This function shows a transaction success message to your buyer.
                     console.log('Transaction completed by ' + details.payer.name.given_name);
+
+                    // $.ajaxSetup({
+                    //     headers: {
+                    //         'X-CSRF-TOKEN': "{{ csrf_token() }}"
+                    //     }
+                    // });
+                    // var details
+                    // console.log(details);
+                    // console.log(details.status);
+                    // console.log(details.id);
+                    // console.log(details.update_time);
+                    // console.log(details.purchase_units[0].payments.captures[0].amount.value);
+                    // console.log(details.purchase_units[0].payments.captures[0].amount.currency_code);
+                    // console.log(details.payer.payer_id);
+                    // $.ajax({
+                    //     type: "POST",
+                    //     url: "{{route('storepaypalinfo')}}",
+                    //     data: {
+                    //         status: details.status,
+                    //         transaction_id: details.id,
+                    //         transacted_at: details.update_time,
+                    //         amount: details.purchase_units[0].payments.captures[0].amount.value,
+                    //         currency: details.purchase_units[0].payments.captures[0].amount.currency_code,
+                    //         payer_id: details.payer.payer_id,
+                    //     },
+                    // }).done(function(data) {
+                    //     console.log(data);
+                    // });
                 });
             }
-        })      .render('#paypal-button-container');
+        }).render('#paypal-button-container');
 
         //This function displays Smart Payment Buttons on your web page.
     </script>
 </div>
-
-

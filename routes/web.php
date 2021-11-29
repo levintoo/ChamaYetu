@@ -33,7 +33,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::get('/dashboard/profile',CompleteProfileComponent::class)->name('dashboard.profile');
         Route::get('/dashboard/savings',SavingsComponent::class)->name('dashboard.savings');
         Route::get('/dashboard/addsavings',AddSavingsComponent::class)->name('dashboard.addsavings');
-        Route::post('/dashboard/addsavings/saveinfo',[AddSavingsComponent::class,'store']);
+        Route::post('/dashboard/addsavings/storepaypalinfo',[AddSavingsComponent::class,'storepaypalinfo'])->name('storepaypalinfo');
         Route::get('/loan/application',LoanAplicationComponent::class)->name('loan.application');
     });
 

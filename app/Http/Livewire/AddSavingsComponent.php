@@ -5,12 +5,13 @@ namespace App\Http\Livewire;
 use App\Models\Members;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use Illuminate\Http\Request;
 
 class AddSavingsComponent extends Component
 {
-    public function store(Request $request)
+    public function storepaypalinfo(Request $request)
     {
-        return response()->json(['success'=>'Successfully']);
+        return dd("hello");
     }
     public function render()
     {
